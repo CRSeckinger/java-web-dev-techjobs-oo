@@ -1,5 +1,8 @@
 package org.launchcode.techjobs_oo;
 
+import org.launchcode.techjobs_oo.tests.JobTest;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Objects;
 
 public class Job {
@@ -102,4 +105,31 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    public String toString() {
+        if (name.equals("")) {
+            name = "Data not available";
+        }
+        if (employer.getValue() == null || employer.getValue().equals("")) {
+            employer.setValue("Data not available");
+        }
+        if (location.getValue() == null || location.getValue().equals("")) {
+            location.setValue("Data not available");
+        }
+        if (positionType.getValue() == null || positionType.getValue().equals("")) {
+            positionType.setValue("Data not available");
+        }
+        if (coreCompetency.getValue() == null || coreCompetency.getValue().equals("")) {
+            coreCompetency.setValue("Data not available");
+        }
+        return "\n" +
+                "\n ID: "+ id +
+                "\n Name: " + name +
+                "\n Employer: " + employer +
+                "\n Location: " + location +
+                "\n Position Type: " + positionType +
+                "\n Core Competency: " + coreCompetency +
+                "\n";
+    }
+
 }
