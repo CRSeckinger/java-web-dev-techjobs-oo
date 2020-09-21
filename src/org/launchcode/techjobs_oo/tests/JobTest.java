@@ -17,6 +17,7 @@ public class JobTest {
     private Job jobTest;
     private Job jobTestTwo;
     private Job jobTestThree;
+    private Job jobTestFour;
     @Before
     public void makeJob() {
         testJobOne = new Job();
@@ -24,6 +25,7 @@ public class JobTest {
         jobTest = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         jobTestTwo = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         jobTestThree = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency(""));
+        jobTestFour = new Job("Product tester", new Employer("ACME"), new Location(null), new PositionType("Quality control"), new CoreCompetency(null));
     }
 
 
@@ -52,6 +54,7 @@ public class JobTest {
        assertEquals(jobTest.toString().charAt(jobTest.toString().length()-1), jobTest.toString().charAt(0));
        assertEquals(jobTest.toString(), "\n\n ID: " + jobTest.getId() +"\n Name: Product tester\n Employer: ACME\n Location: Desert\n Position Type: Quality control\n Core Competency: Persistence\n");
        assertEquals(jobTestThree.toString(), "\n\n ID: " + jobTestThree.getId() +"\n Name: Product tester\n Employer: ACME\n Location: Data not available\n Position Type: Quality control\n Core Competency: Data not available\n");
+       assertEquals(jobTestFour.toString(), "\n\n ID: " + jobTestFour.getId() +"\n Name: Product tester\n Employer: ACME\n Location: Data not available\n Position Type: Quality control\n Core Competency: Data not available\n");
     }
 
 }
